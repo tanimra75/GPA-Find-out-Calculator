@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Master the grid column proparty</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <link type="text/css" href="styling.css" rel="stylesheet">
+    </head>
+    <body>
+        <form method="get">
+<!--            <p>The quick brown fox jumbps over a lazy dog.</p>-->
+            
+            <label for="bangla">Bangla:</label>
+            <input type="number" id="bangla" placeholder="Write your marks" maxlength="03" size="30px">
+            <label for="english">English:</label>
+            <input type="number" id="english" placeholder="Write your marks" maxlength="03" size="30px">
+            <label for="math">Math:</label>
+            <input type="number" id="math" placeholder="Write your marks" maxlength="03" size="30px">
+            <label for="social_sc">Social Science:</label>
+            <input type="number" id="social_sc" placeholder="Write your marks" maxlength="03" size="30px">
+            <input type="submit" id="submit" value="Submit">
+            <p id="output">Below we showing your result:</p>
+        </form>
+        
+        <script>
+            function great(x){
+                
+                
+                if(x <= 100 && x >= 80){
+                    document.getElementById("output").innerHTML += "<br/>" + "A+" ;
+                }
+                else if(x > 100){
+                    document.getElementById("output").innerHTML +="<br/>" + " Input invlad number. Your number must be less than or equal 100";
+                }
+                else if(x >= 70){
+                    document.getElementById("output").innerHTML += "<br/>" + "A";
+                }
+                else if(x >= 60){
+                    document.getElementById("output").innerHTML += "<br/>" + "A-";
+                }
+                else if(x >= 50){
+                    document.getElementById("output").innerHTML += "<br/>" + "B";
+                }
+                else if(x >= 40){
+                    document.getElementById("output").innerHTML += "<br/>" + "C";
+                }
+                else if(x >= 33){
+                    document.getElementById("output").innerHTML += "<br/>" + "D";
+                }
+                else{
+                    document.getElementById("output").innerHTML += "<br/>" + "F";
+                }
+                
+            }
+            document.getElementById("submit").onclick = function(event) {
+                event.preventDefault();
+
+                // Fetch input values
+                var bangla = parseFloat(document.getElementById("bangla").value);
+                var english = parseFloat(document.getElementById("english").value);
+                var math = parseFloat(document.getElementById("math").value);
+                var ssc = parseFloat(document.getElementById("social_sc").value);
+                
+                // Clear output area before adding new results
+                document.getElementById("output").innerHTML = "";
+
+                // Call the great function for each subject
+                great(bangla);
+                great(english);
+                great(math);
+                great(ssc);
+            };
+        </script>
+        
+    </body>
+</html>

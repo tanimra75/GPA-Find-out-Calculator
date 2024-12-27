@@ -1,0 +1,60 @@
+form{
+    background-color: lightgoldenrodyellow;
+    font-size: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: [label] auto [input] 1fr;
+/*    grid-template-rows: 30px 30px 30px 30px;*/
+    grid-gap: 10px;
+}
+
+form input{
+    font-size: 20px;
+    grid-column: input;
+    padding: 5px;
+}
+
+form label{
+    grid-column: label;
+    padding: 5px;
+}
+
+form input[type ="submit"]{
+    grid-column: span 2;
+    background-color: #f9ecb3 ;
+    color: #2497b7;
+    padding: 8px;
+    font-size: 1.5em;
+}
+
+form p{
+    grid-column: span 2;
+    color: #830abb ;
+}
+
+/*
+form input:nth-child(1){
+    grid-area: b;
+}
+form input:nth-child(2){
+    grid-area: d;
+}
+
+form input:nth-child(3){
+    grid-area: f ;
+}
+form input:nth-child(4){
+    grid-area: g;
+}
+
+
+
+form label:nth-child(2){
+    grid-area: c;
+}
+
+form label:nth-child(3){
+    grid-area: e;
+}
+*/
+
